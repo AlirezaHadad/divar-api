@@ -20,6 +20,9 @@ async function main () {
     SwaggerConfig(app);
     NotFoundHandler(app);
     AllExceptionHandler(app);
+    app.use(cors({
+        origin: 'http://localhost:5173'
+      }));
     app.listen(port, () => {
         console.log(`server: http://localhost:${port}`);
     });
